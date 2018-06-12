@@ -1,0 +1,7 @@
+<div>
+  {{#each products as |product|}}
+    <div>
+      <z-product-card {{action "str" on="productLiked" }}  product={{product}}></z-product-card>
+    </div>
+  {{/each}}
+</div>

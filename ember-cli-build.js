@@ -1,11 +1,18 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
+var Funnel = require('broccoli-funnel');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
   });
+
+  var extraAssets = new Funnel('node_modules/z-product-card/dist/zlib', {
+    destDir: '/assets/zlib'
+  });
+
+
+  app.import('node_modules/z-product-card/dist/zlib.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -20,5 +27,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return app.toTree(extraAssets);
 };
