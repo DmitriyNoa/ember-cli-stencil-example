@@ -1,13 +1,13 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var Funnel = require('broccoli-funnel');
+const Funnel = require('broccoli-funnel');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
   });
 
-  var extraAssets = new Funnel('node_modules/z-product-card/dist/zlib', {
+  const extraAssets = new Funnel('node_modules/z-product-card/dist/zlib', {
     destDir: '/assets/zlib'
   });
 

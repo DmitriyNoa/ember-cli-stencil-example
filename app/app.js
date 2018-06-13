@@ -2,9 +2,12 @@ import Application from '@ember/application';
 import Resolver from './resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
-
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
+  customEvents: {
+    // add support for the paste event
+    productliked: 'productliked'
+  },
   podModulePrefix: config.podModulePrefix,
   Resolver
 });
