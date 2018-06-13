@@ -1,7 +1,7 @@
 <div>
   {{#each products as |productItem|}}
     <div>
-      {{z-product-card  product=(process-data productItem)}}
+      {{z-product-card productLiked=(action onProductLiked)  product=(process-data productItem)}}
     </div>
   {{/each}}
 </div>

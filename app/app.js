@@ -6,7 +6,7 @@ const App = Application.extend({
   modulePrefix: config.modulePrefix,
   customEvents: {
     // add support for the paste event
-    productliked: 'productliked'
+    productLiked: 'productLiked'
   },
   podModulePrefix: config.podModulePrefix,
   Resolver

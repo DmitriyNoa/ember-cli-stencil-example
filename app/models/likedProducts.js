@@ -1,5 +1,6 @@
 import DS from 'ember-data';
-import products from '../products';
+
 export default DS.Model.extend({
-  products: products
+  name: DS.attr(),
+  image: DS.attr()
 });

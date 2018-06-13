@@ -4,16 +4,11 @@ import { products } from '../mocks/products';
 
 export default Component.extend({
   onProductLiked: (evt) => {
-    console.log(evt.detail);
+    const data = JSON.parse(evt.detail);
+    console.log(data);
   },
   processProduct: (product) => {
     return JSON.stringify(product)
-  },
-  didInsertElement() {
-    this.$('z-product-card').on('productLiked', this.onProductLiked);
-  },
-  didDestroyElement() {
-    this.$('z-product-card').off('productLiked', this.onProductLiked);
   },
   products: computed(function() {
     return products
