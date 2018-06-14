@@ -1,9 +1,7 @@
 import Ember from 'ember';
-
 export default Ember.Controller.extend({
   repo: Ember.inject.service(),
   remaining: Ember.computed.filterBy('model', 'completed', false),
-  needs: "service:repo",
   completed: Ember.computed.filterBy('model', 'completed'),
   actions: {
     createTodo(e) {

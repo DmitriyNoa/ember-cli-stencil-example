@@ -11,6 +11,10 @@ module.exports = function(defaults) {
     destDir: '/assets/zlib'
   });
 
+  const extraAssetsImages = new Funnel('node_modules/z-product-card/dist/collection/assets/img', {
+    destDir: '/assets/img'
+  });
+
 
   app.import('node_modules/z-product-card/dist/zlib.js');
 
@@ -27,5 +31,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree(extraAssets);
+  return app.toTree([extraAssets, extraAssetsImages]);
 };

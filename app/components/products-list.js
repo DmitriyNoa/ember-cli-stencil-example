@@ -4,15 +4,12 @@ import { products } from '../mocks/products';
 import Ember from 'ember';
 export default Component.extend({
   repo: Ember.inject.service(),
-  needs: "service:repo",
   onProductLiked (evt) {
-    console.log(evt);
     const data = JSON.parse(evt.detail);
     this.createTodo(data);
   },
   actions: {
     onProductLiked (evt) {
-      console.log(evt);
       const data = JSON.parse(evt.detail);
       this.createTodo(data);
     }
