@@ -1,6 +1,7 @@
 .product-grid-item {
     float: left;
     margin: 10px;
+    width: 200px;
 }
 .col-left {
     float: left;

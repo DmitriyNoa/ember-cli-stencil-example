@@ -1,7 +1,20 @@
-<div>
+<div class="demo-container">
+  <div class="col-left">
+    <h2>Custom web component test</h2>
   {{#each products as |productItem|}}
-    <div>
-      {{z-product-card productLiked=(action onProductLiked)  product=(process-data productItem)}}
-    </div>
+      {{z-product-card class="product-grid-item" productLiked=(action onProductLiked)  product=(process-data productItem)}}
   {{/each}}
+  </div>
+  <div class="col-right">
+    <h2>Liked products</h2>
+    <ul class="liked-products">
+  {{#each likedProducts as |productItem|}}
+  <li>
+    <img src={{productItem.image}}
+         alt="">
+    {{productItem.name}}
+  </li>
+  {{/each}}
+    </ul>
+  </div>
 </div>
